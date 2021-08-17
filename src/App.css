@@ -1,6 +1,6 @@
 body {
 	background:  #9b9b9b;
-	color: #ffffff;
+	color: #cf3721;
 }
 
 * {
@@ -115,4 +115,8 @@ h1 {
 .navbar {
 	background-color:#262626;
 	padding: 15px;
+}
+
+.Upcoming {
+	color: Yellow;
 }

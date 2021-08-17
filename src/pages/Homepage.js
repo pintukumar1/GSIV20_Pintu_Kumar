@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import MovieList from "../components/MovieList";
+import SearchList from "../components/SearchList";
 import NavBar from '../components/NavBar'; 
-import NowPlaying from '../components/NowPlaying'; 
+import UpcomingMovies from '../components/UpcomingMovies'; 
 
 const Homepage = () => {
     // initial state, set state of movies array 
-    const [movies, setMovies] = useState([]);
+    const [movies, setMovies] = useState([])
   
     // initial state, set state of search string 
     const [search, setSearch] = useState('');
   
     // calling API -- searchValue as a parameter 
     const searchMovie = async (searchTerm) => {
-      const url = `https://api.themoviedb.org/3/search/movie?api_key=33fb4958c2325dbf8c28f8bcc27cd575&language=en-US&query=${searchTerm}&page=1-2&include_adult=false`;
-  
+      
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=33fb4958c2325dbf8c28f8bcc27cd575&language=en-US&query=${searchTerm}&page=1&include_adult=false`;
+    
       const response = await fetch(url); 
       const responseJson = await response.json(); 
   
@@ -41,15 +42,15 @@ const Homepage = () => {
           </div>
           
           <div className='row'>
-            <MovieList movies={movies} />
+            <SearchList movies={movies} />
           </div>
   
           <div className="title-one">
-            <h1 className="now-playing">Now Playing</h1>
+            <h1 className="Upcoming">Upcoming Movies</h1>
           </div>
   
           <div className='row d-flex mt-4 mb-4'>
-            <NowPlaying/>
+            <UpcomingMovies/>
           </div>
         </div>
       </>

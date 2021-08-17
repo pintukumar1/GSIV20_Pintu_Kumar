@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Moment from 'react-moment'; 
 import { StarFill } from 'react-bootstrap-icons';
 
-const NowPlaying = () => {
+const UpcomingMovies = () => {
 
     const [movies, setMovies] = useState([]);
 
 
     const getMovieRequest = async () => { 
-        const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=33fb4958c2325dbf8c28f8bcc27cd575&language=en-US&page=1`;
+        const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=33fb4958c2325dbf8c28f8bcc27cd575&language=en-US&page=1`;
 
         const response = await fetch(url); 
         const responseJson = await response.json(); 
@@ -27,7 +27,7 @@ const NowPlaying = () => {
             <div className="movie-container" key={movie.id}>
             
             <div className='image-container d-flex justify-content-center'>
-                <a href={`https://www.themoviedb.org/movie/${movie.id}`} alt="link-to-site">
+                <a href={`/movie-details/${movie.title}`} alt="link-to-site">
                     <img src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`} alt='movie'/>
                 </a>
             </div>
@@ -45,4 +45,4 @@ const NowPlaying = () => {
 	);
 };
 
-export default NowPlaying;
+export default UpcomingMovies;
