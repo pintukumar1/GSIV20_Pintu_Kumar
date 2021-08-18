@@ -10,8 +10,8 @@ const App = () => {
     <Router>
     <>
       <Switch>
-        <Route exact path='/react-movie-app' component={Homepage} />
-        <Route path="/movie-details" component={MovieDetails} />
+        <Route exact path='/' component={Homepage} />
+        <Route path="/movie-details/:MovieId" component={MovieDetails} />
       </Switch>
     </>
   </Router>

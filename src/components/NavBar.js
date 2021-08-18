@@ -23,7 +23,7 @@ const NavBar = (props) => {
                 value={props.value}
 				onChange={(event) => props.setSearch(event.target.value)} />
                 </form>
-                <a href="/react-movie-app">
+                <a href="/">
                   <HomeIcon />
                 </a>
             </div>

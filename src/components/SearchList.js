@@ -11,7 +11,7 @@ const SearchList = (props) => {
                 <div className="movie-container" key={movie.id}>
                 
                     <div className='image-container d-flex justify-content-center'>
-                        <a href={`/movie-details/${movie.title}`} alt="link-to-site">
+                        <a href={`/movie-details/${movie.id}`} alt="link-to-site">
                             <img src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`} alt='movie'/>
                         </a>
                     </div>
