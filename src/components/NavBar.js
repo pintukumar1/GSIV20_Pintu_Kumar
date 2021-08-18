@@ -15,7 +15,7 @@ const NavBar = (props) => {
                 placeholder="Search" 
                 InputProps={{
                     endAdornment: (
-                      <InputAdornment>
+                      <InputAdornment position="start">
                           <SearchIcon/>
                       </InputAdornment>
                     )
