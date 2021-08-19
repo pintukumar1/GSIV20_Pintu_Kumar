@@ -38,7 +38,7 @@ const MovieDetails = (props) => {
 		<>
         
         <div className="Content">
-            <h1 className="ml-4 movie-title">Movie Details</h1>
+            <h1 style={{marginLeft: "20px", marginTop:"10px"}}>Movie Details</h1>
             <a className="mr-4" href="/">
                 <HomeIcon />
             </a> 
@@ -70,7 +70,7 @@ const MovieDetails = (props) => {
                 )))  
                 }
                 </div>
-                <div>
+                <div style={{marginRight: "50px"}}>
                {
                 crew && crew.filter(function(el) {
                     return el.job === "Director" ;
