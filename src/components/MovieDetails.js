@@ -8,7 +8,7 @@ const MovieDetails = (props) => {
     const [cast, setCast] = useState('');
     const [crew, setCrew] = useState('');
     
-    const MovieId = props.match.params.MovieId;    
+    const MovieId = props.match.params.MovieId;   
 
     const getMovieRequest = async () => { 
         const url = `https://api.themoviedb.org/3/movie/${MovieId}?api_key=33fb4958c2325dbf8c28f8bcc27cd575&language=en-US`;
@@ -62,20 +62,20 @@ const MovieDetails = (props) => {
                 <h1>Cast</h1>
                 {
                  cast && cast.map((cast => (
-                     <div className="CastAndCrew">
-                         <p key={cast.id}><span className="font-weight-bold">{cast.name}</span></p> 
-                         <img src={`https://image.tmdb.org//t/p/w300_and_h300_bestv2/${cast.profile_path}`} alt="No Image Found"/>   
+                     <div key={cast.id}className="CastAndCrew">
+                         <p><span className="font-weight-bold">{cast.name}</span></p> 
+                         <img src={`https://image.tmdb.org//t/p/w300_and_h300_bestv2/${cast.profile_path}`} alt=""/>   
                      </div>
+
                 )))  
                 }
                 </div>
                 <div>
-                   <h1>Director</h1>
                {
                 crew && crew.filter(function(el) {
                     return el.job === "Director" ;
                 }).map(crew => (
-                    <h2 key={crew.credit_id}><span className="font-weight-bold">{crew.name}</span></h2> 
+                    <h2 key={crew.credit_id}><span className="font-weight-bold">Director: <br/></span>{crew.name}</h2> 
                 ))
                }
                 </div>
